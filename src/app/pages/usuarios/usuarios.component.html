@@ -1,0 +1,86 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center;">
+                <h4 class="card-title" style="margin-right: 10px;">Usuarios</h4>
+                <button (click)="openModal(null)" type="button" class="btn btn-success">
+                    <i class="nc-icon nc-simple-add"></i>
+                </button>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-success">
+                    <i class="nc-icon nc-layers-3"></i>
+                </button>
+                <button type="button" class="btn btn-danger ml-2">
+                    <i class="nc-icon nc-grid-45"></i>
+                </button>
+                <button type="button" class="btn btn-primary ml-2">
+                    <i class="nc-icon nc-send"></i>
+                </button>
+            </div>
+            <div class="form-group">
+              <input 
+              (keyup)="searchUsuarios()" name="searchUsuario" [(ngModel)]="searchUsuario"
+              type="text" class="form-control"  name="searchProd"  placeholder="Buscar por código o nombre">
+            </div>
+        </div>
+        
+        
+        
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-light bg-dark">
+              <th>
+                #
+              </th>
+              <th>
+                Usuario
+              </th>
+              <th>
+                Nombre
+              </th>
+              <th>
+                Estado
+              </th>
+              <th>
+                
+              </th>
+             
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of usuarios">
+                <td>
+                  {{usuario.id}}
+                </td>
+                <td>
+                  {{usuario.usuario}}
+                </td>
+                <td>
+                 {{usuario.nombre}}
+                </td>
+                <td>
+                  <span class="badge badge-pill" [ngClass]="{'badge-success': usuario.estado, 'badge-danger': !usuario.estado}">
+                    {{ usuario.estado ? "Activo" : "Inactivo" }}
+                  </span>
+                </td>
+               
+                <td>       
+                  <button (click)="openModalPermiso(usuario.id)" type="button" class="btn btn-warning ml-1">
+                    <i class="nc-icon nc-key-25"></i>
+                </button>                      
+                  <button (click)="openModal(usuario)" type="button" class="btn btn-info ml-1">
+                    <i class="nc-icon nc-settings-90"></i>
+                </button>  
+                <button (click)="eliminarUsuario(usuario.id)" type="button" class="btn btn-danger ml-1">
+                    <i class="nc-icon nc-simple-remove"></i>
+                </button>      
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

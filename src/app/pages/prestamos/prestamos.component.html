@@ -1,0 +1,96 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center;">
+                <h4 class="card-title" style="margin-right: 10px;">Prestamos</h4>
+                <button  type="button" class="btn btn-success">
+                    <i class="nc-icon nc-simple-add"></i>
+                </button>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-success">
+                    <i class="nc-icon nc-layers-3"></i>
+                </button>
+                <button type="button" class="btn btn-danger ml-2">
+                    <i class="nc-icon nc-grid-45"></i>
+                </button>
+                <button type="button" class="btn btn-primary ml-2">
+                    <i class="nc-icon nc-send"></i>
+                </button>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control"  name="searchProd"  placeholder="Buscar por código o nombre">
+            </div>
+        </div>
+        
+        
+        
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-light bg-dark">
+              <th>
+                #
+              </th>
+              <th>
+                Libro
+              </th>
+              <th>
+                Estudiante
+              </th>              
+              <th>
+                Fecha Prestamo
+              </th>
+              <th>
+                Fecha Devolucion
+              </th>
+             <th>
+                Cant
+             </th>
+             <th>
+                Observacion
+             </th>
+             <th>
+                Estado
+             </th>
+             <th></th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let usuario of prestamos">
+                <td>
+                  {{usuario.codproducto}}
+                </td>
+                <td>
+                  {{usuario.codigo}}
+                </td>
+                <td>
+                 {{usuario.descripcion}}
+                </td>
+                <td>
+                   {{usuario.precio}}
+                </td>
+                <td>
+                  {{usuario.existencia}}
+                </td>
+                <td>
+                  <span class="badge badge-pill" [ngClass]="{'badge-success': usuario.estado, 'badge-danger': !usuario.estado}">
+                    {{ usuario.estado ? "Activo" : "Inactivo" }}
+                  </span>
+                </td>
+                <td>
+                           
+                    <button type="button" class="btn btn-info ml-1">
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                    </button>  
+                    <button  type="button" class="btn btn-danger ml-1">
+                        <i class="now-ui-icons ui-1_simple-remove"></i>
+                    </button>           
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

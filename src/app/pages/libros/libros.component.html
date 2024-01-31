@@ -1,0 +1,103 @@
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header" style="display: flex; justify-content: space-between; align-items: center;">
+            <div style="display: flex; align-items: center;">
+                <h4 class="card-title" style="margin-right: 10px;">Libros</h4>
+                <button (click)="openModal(null)" type="button" class="btn btn-success">
+                    <i class="nc-icon nc-simple-add"></i>
+                </button>
+            </div>
+            <div class="form-group">
+                <button type="button" class="btn btn-success">
+                    <i class="nc-icon nc-layers-3"></i>
+                </button>
+                <button type="button" class="btn btn-danger ml-2">
+                    <i class="nc-icon nc-grid-45"></i>
+                </button>
+                <button type="button" class="btn btn-primary ml-2">
+                    <i class="nc-icon nc-send"></i>
+                </button>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control"  name="searchProd"  placeholder="Buscar por código o nombre">
+            </div>
+        </div>
+        
+        
+        
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table">
+            <thead class=" text-light bg-dark">
+              <th>
+                #
+              </th>
+              <th>
+                Titulo
+              </th>
+              <th>
+                Cant
+              </th>
+              <th>
+                Autor
+              </th>
+              <th>
+                Editorial
+              </th>
+              <th>
+                Materia
+              </th>
+              <th>
+                Descripcion
+              </th>
+              <th>
+                Estado
+              </th>
+              <th>
+
+              </th>
+            </thead>
+            <tbody>
+              <tr *ngFor="let libro of libros">
+                <td>
+                  {{libro.id}}
+                </td>
+                <td>
+                  {{libro.titulo}}
+                </td>
+                <td>
+                  {{libro.cantidad}}
+                </td>
+                <td>
+                  {{libro.autor}}
+                </td>
+                <td>
+                  {{libro.editorial}}
+                </td>
+                <td>
+                  {{libro.materia}}
+                </td>
+                <td>
+                  {{libro.descripcion}}
+                </td>
+                <td>
+                  <span class="badge badge-pill" [ngClass]="{'badge-success': libro.estado, 'badge-danger': !libro.estado}">
+                    {{ libro.estado ? "Activo" : "Inactivo" }}
+                  </span>
+                </td>
+                <td>
+                  <button (click)="openModal(libro)"  type="button" class="btn btn-info ml-1">
+                    <i class="nc-icon nc-settings-90"></i>
+                </button>  
+                <button (click)="eliminarLibro(libro.id)"  type="button" class="btn btn-danger ml-1">
+                    <i class="nc-icon nc-simple-remove"></i>
+                </button>            
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>

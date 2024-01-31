@@ -1,0 +1,27 @@
+
+<div class="col-md-12 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{isEdit?"Editar Autor":"Crear Autor"}}</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="autorForm">
+                <div class="row">
+                    <div class="col-md-12 pr-1">
+                        <div class="form-group">
+                            <label>Nombre de Autor</label>
+                            <input type="text" class="form-control" formControlName="autor" placeholder="Escribe el autor" value="">
+                        </div>
+                    </div>
+                   
+                </div>
+
+                <button (click)="closeModal()" type="button" class="btn btn-danger btn-fill pull-right">Cancelar</button>
+                <button (click)="guardar()" type="button" class="btn btn-success btn-fill pull-right mr-2">Guardar</button>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+

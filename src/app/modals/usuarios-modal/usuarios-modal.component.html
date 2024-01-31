@@ -1,0 +1,51 @@
+
+<div class="col-md-12 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{isEdit?"Editar Usuario":"Crear Usuario"}}</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="usuarioForm">
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Usuario</label>
+                            <input type="text" class="form-control" formControlName="usuario" placeholder="Escribe el usuario" value="">
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pr-1">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" formControlName="nombre" placeholder="Escribe el nombre" value="">
+                        </div>
+                    </div>                   
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Clave</label>
+                            <input type="password" class="form-control" formControlName="clave" placeholder="Clave" value="">
+                        </div>
+                    </div>   
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Confirmar Clave</label>
+                            <input type="password" class="form-control" formControlName="clave2" placeholder="Confirmar Clave" value="">
+                        </div>
+                    </div>                   
+                </div>
+               
+
+                <button (click)="closeModal()" type="button" class="btn btn-danger btn-fill pull-right">Cancelar</button>
+                <button (click)="guardar()" type="button" class="btn btn-success btn-fill pull-right mr-2">Guardar</button>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+

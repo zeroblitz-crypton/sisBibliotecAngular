@@ -1,0 +1,63 @@
+
+<div class="col-md-12 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{isEdit?"Editar Estudiante":"Crear Estudiante"}}</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="estudianteForm">
+                <div class="row">
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Codigo</label>
+                            <input type="text" class="form-control" formControlName="codigo" placeholder="Escribe el codigo" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>dni</label>
+                            <input type="text" class="form-control" formControlName="dni" placeholder="Escribe el dni" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pr-1">
+                        <div class="form-group">
+                            <label>Nombre</label>
+                            <input type="text" class="form-control" formControlName="nombre" placeholder="Escribe el nombre" value="">
+                        </div>
+                    </div>                
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pr-1">
+                        <div class="form-group">
+                            <label>Carrera</label>
+                            <input type="text" class="form-control" formControlName="carrera" placeholder="Escribe la carrera" value="">
+                        </div>
+                    </div>                
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pr-1">
+                        <div class="form-group">
+                            <label>Telefono</label>
+                            <input type="text" class="form-control" formControlName="telefono" placeholder="Escribe la carrera" value="">
+                        </div>
+                    </div>                
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pr-1">
+                        <div class="form-group">
+                            <label>Direccion</label>
+                            <input type="text" class="form-control" formControlName="direccion" placeholder="Escribe la carrera" value="">
+                        </div>
+                    </div>                
+                </div>
+                <button (click)="closeModal()" type="button" class="btn btn-danger btn-fill pull-right">Cancelar</button>
+                <button (click)="guardar()" type="button" class="btn btn-success btn-fill pull-right mr-2">Guardar</button>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+

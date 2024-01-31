@@ -1,0 +1,81 @@
+
+<div class="col-md-12 mt-5">
+    <div class="card">
+        <div class="card-header">
+            <h4 class="card-title">{{isEdit?"Editar Editorial":"Crear Editorial"}}</h4>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="libroForm">
+                <div class="row">
+                    <div class="col-md-8 pr-1">
+                        <div class="form-group">
+                            <label>Titulo</label>
+                            <input type="text" class="form-control" formControlName="titulo" placeholder="Titulo del libro" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                            <label>Autor</label>
+                            <input type="text" class="form-control" formControlName="autor" placeholder="Buscar Autor" value="">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 pr-1">
+                        <div class="form-group">
+                            <label>Editorial</label>
+                            <input type="text" class="form-control" formControlName="editorial" placeholder="Buscar Editorial" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-5 pr-1">
+                        <div class="form-group">
+                            <label>Materia</label>
+                            <input type="text" class="form-control" formControlName="materia" placeholder="Buscar Materia" value="">
+                            <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                                <option selected>Open this select menu</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                              </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 pr-1">
+                        <div class="form-group">
+                            <label>Cantidad</label>
+                            <input type="text" class="form-control" formControlName="cantidad" placeholder="Cantidad" value="">
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3 pr-1">
+                        <div class="form-group">
+                            <label>Cantidad de Paginas</label>
+                            <input type="text" class="form-control" formControlName="paginas" placeholder="Cantidad de paginas" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-3 pr-1">
+                        <div class="form-group">
+                            <label>Año Edición</label>
+                            <input type="text" class="form-control" formControlName="anio" placeholder="Buscar Materia" value="">
+                        </div>
+                    </div>
+                    <div class="col-md-6 pr-1">
+                        <div class="form-group">
+                            <label>Descripcion</label>                                                     
+                            <textarea class="form-control" formControlName="descripcion" name="" id="" rows="3"></textarea>
+                           
+                        </div>
+                    </div>
+                </div>
+
+                <button (click)="closeModal()" type="button" class="btn btn-danger btn-fill pull-right">Cancelar</button>
+                <button (click)="guardar()" type="button" class="btn btn-success btn-fill pull-right mr-2">Guardar</button>
+
+                <div class="clearfix"></div>
+            </form>
+        </div>
+    </div>
+</div>
+
